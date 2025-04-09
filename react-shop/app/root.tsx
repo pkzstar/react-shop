@@ -6,9 +6,15 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
 import "./app.css";
+import "../react-shop/app/tailwind.css"
+import "../react-shop/app/global.css"
+import { Nav } from "../react-shop/app/routes/nav.tsx";
+import { item } from "../react-shop/app/routes/item.tsx";
+import { Item } from "./routes/item";
+
+
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,6 +39,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+      <Nav />
+      <div className="itemContainerList">
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      </div>
         {children}
         <ScrollRestoration />
         <Scripts />
